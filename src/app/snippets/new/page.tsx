@@ -11,7 +11,7 @@ export default function SnippetCreatePage() {
         const code = formData.get('code') as string;
 
         //Create a new record in the database
-        const snippet = await db.create.snippet({
+        const snippet = await db.snippet.create({
             data: {
                 title,
                 code
