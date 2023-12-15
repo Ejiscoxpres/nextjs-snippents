@@ -1,5 +1,5 @@
 import {redirect} from 'next/navigation';
-import {db} from '@db';
+import {db} from '@/db';
 export default function SnippetCreatePage() { 
      async function createSnippet(formData: FormData) {
 
