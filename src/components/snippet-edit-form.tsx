@@ -9,10 +9,15 @@ import * as actions from '@/actions'
  }
 
 export default function SnippetEditForm({snippet}:SnippetEditFormProps){
-    const handleEditorChange = (value: string = "") => {
+    const [code, setCode] = useState(snippet.code)
+            
 
-        const [code, setCode] = useState(snippet.code)
-            console.log(value);
+
+    const handleEditorChange = (value: string = "") => {
+        setCode(value);
+
+
+        
     };
     return <div>
         <Editor
