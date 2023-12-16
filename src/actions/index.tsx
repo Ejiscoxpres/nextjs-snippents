@@ -27,7 +27,7 @@ export async function createSnippet
      
      ) {
 
-
+       
        // Check the users input and ensure that they  are valid
         const title = formData.get('title') as string;
         const code = formData.get('code') as string;
@@ -43,7 +43,7 @@ export async function createSnippet
                 message:'Code must be longer'
             };
         }
-        throw new Error ('00ps!!!');
+        
 
         /*//Create a new record in the database
         const snippet = await db.snippet.create({
@@ -54,6 +54,8 @@ export async function createSnippet
             
         });
         */
+
+        throw new Error ('00ps!!!');
 
         //Redirect the user to the root route
         redirect('/');
