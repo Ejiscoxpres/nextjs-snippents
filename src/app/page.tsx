@@ -7,7 +7,7 @@ export default async function Home() {
 
   const renderedSnippets = snippets.map((snippet) => {
     
-    return <Link  
+    return( <Link  
     key= {snippet.id}
     href={`/snippets/${snippet.id}`}
 
@@ -17,9 +17,11 @@ export default async function Home() {
         <div>View</div>
       
      
-      </Link>;
-  
-    return  
+      </Link>
+    )
+  });
+
+    return( 
     <div>
       <div className='flex m-2 justify-between items-center'>
         <h1 className='text-xl font-bold'>Snippets</h1>
@@ -30,11 +32,8 @@ export default async function Home() {
       {renderedSnippets}
       </div>
 
-      </div>;
+      </div>
     
-
-  });
-                 
-
-  
+    )
+   
 }
