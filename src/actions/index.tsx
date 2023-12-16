@@ -43,8 +43,9 @@ export async function createSnippet
                 message:'Code must be longer'
             };
         }
+        throw new Error ('00ps!!!');
 
-        //Create a new record in the database
+        /*//Create a new record in the database
         const snippet = await db.snippet.create({
             data: {
                 title,
@@ -52,7 +53,7 @@ export async function createSnippet
             },
             
         });
-        
+        */
 
         //Redirect the user to the root route
         redirect('/');
