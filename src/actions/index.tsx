@@ -27,6 +27,8 @@ export async function createSnippet
      
      ) {
 
+        try{
+
        
        // Check the users input and ensure that they  are valid
         const title = formData.get('title') as string;
@@ -38,13 +40,14 @@ export async function createSnippet
             };
         }
         
+       
         if(typeof code !== 'string' || code.length <10){
             return{
                 message:'Code must be longer'
             };
         }
         
-
+        
         /*//Create a new record in the database
         const snippet = await db.snippet.create({
             data: {
@@ -54,9 +57,23 @@ export async function createSnippet
             
         });
         */
+        redirect('/');
+        throw new Error ('Failed to save to database!');
+        } catch(err:unknown){
+            if(err instanceof Error){
+                return{
+                    message:err.message,
+                };
+            }else{
+                return{
+                    message:'something went wrong...',
+                }
+            }
 
-        throw new Error ('00ps!!!');
+                
+
+        }
 
         //Redirect the user to the root route
-        redirect('/');
+        
     }
