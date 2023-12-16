@@ -8,7 +8,7 @@ interface SnippetEditPageProps{
     }
 } 
 
-    // async function is used to do fetch data inside this component
+    // async function is used to fetch data inside this component
 
 export default async function SnippetEditPage(props:SnippetEditPageProps){
     const id = parseInt(props.params.id);
