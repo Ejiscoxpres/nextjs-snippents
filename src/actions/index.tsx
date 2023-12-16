@@ -48,17 +48,17 @@ export async function createSnippet
         }
         
         
-        /*//Create a new record in the database
-        const snippet = await db.snippet.create({
+        //Create a new record in the database
+         await db.snippet.create({
             data: {
                 title,
                 code
             },
             
         });
-        */
-        redirect('/');
-        throw new Error ('Failed to save to database!');
+    
+    
+       
         } catch(err:unknown){
             if(err instanceof Error){
                 return{
@@ -75,5 +75,7 @@ export async function createSnippet
         }
 
         //Redirect the user to the root route
+
+        redirect('/');
         
     }
